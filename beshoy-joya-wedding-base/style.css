@@ -1,0 +1,1500 @@
+/* =========================================================
+   BESH0Y & JOYA — WEDDING WEBSITE
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+  --paper: #f8f6f1;
+
+  --paper-2: #eeeae2;
+
+  --ink: #25231f;
+
+  --muted: #77736b;
+
+  --line: rgba(37, 35, 31, 0.16);
+
+  --white: #ffffff;
+
+  --serif:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  --sans:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  --ease:
+    cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+  box-sizing: border-box;
+
+}
+
+
+html {
+
+  scroll-behavior: smooth;
+
+  scroll-padding-top: 20px;
+
+}
+
+
+body {
+
+  margin: 0;
+
+  background:
+    var(--paper);
+
+  color:
+    var(--ink);
+
+  font-family:
+    var(--sans);
+
+  font-weight:
+    300;
+
+  overflow-x:
+    hidden;
+
+}
+
+
+img {
+
+  display: block;
+
+  max-width: 100%;
+
+}
+
+
+a,
+button {
+
+  font: inherit;
+
+}
+
+
+button {
+
+  border-radius: 0;
+
+}
+
+
+::selection {
+
+  background:
+    var(--ink);
+
+  color:
+    var(--white);
+
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+
+  width:
+    min(1100px, 100%);
+
+  margin:
+    0 auto;
+
+  padding:
+    clamp(82px, 11vw, 140px)
+    clamp(22px, 5vw, 48px);
+
+}
+
+
+.eyebrow {
+
+  margin:
+    0 0 22px;
+
+  font-size:
+    10px;
+
+  line-height:
+    1.5;
+
+  letter-spacing:
+    clamp(2px, .5vw, 4px);
+
+  font-weight:
+    500;
+
+}
+
+
+.body-copy {
+
+  width:
+    min(650px, 100%);
+
+  margin:
+    0 auto;
+
+  color:
+    #59564f;
+
+  font-size:
+    14px;
+
+  line-height:
+    2;
+
+}
+
+
+/* =========================================================
+   MAIN HEADINGS
+========================================================= */
+
+.intro h2,
+.details h2 {
+
+  max-width:
+    850px;
+
+  margin:
+    0 auto 28px;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    clamp(42px, 6vw, 76px);
+
+  font-weight:
+    400;
+
+  line-height:
+    .98;
+
+}
+
+
+/* =========================================================
+   BIBLE QUOTE
+========================================================= */
+
+.bible-quote {
+
+  max-width:
+    850px;
+
+  margin:
+    0 auto 30px;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    clamp(28px, 4vw, 48px);
+
+  font-weight:
+    400;
+
+  line-height:
+    1.15;
+
+  letter-spacing:
+    -.01em;
+
+  color:
+    var(--ink);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+  position:
+    relative;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  width:
+    100%;
+
+  min-height:
+    100svh;
+
+  overflow:
+    hidden;
+
+  isolation:
+    isolate;
+
+  background:
+    #141414;
+
+  color:
+    var(--white);
+
+}
+
+
+/* =========================================================
+   BLURRED BACKGROUND
+========================================================= */
+
+.hero::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    -40px;
+
+  z-index:
+    -3;
+
+  background:
+    url("hero3.jpeg")
+    center center /
+    cover
+    no-repeat;
+
+  filter:
+    blur(28px);
+
+  transform:
+    scale(1.08);
+
+  opacity:
+    .62;
+
+}
+
+
+/* =========================================================
+   MAIN HERO IMAGE
+========================================================= */
+
+.hero-image {
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    50%;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  transform:
+    translateX(-50%);
+
+  z-index:
+    -2;
+
+  object-fit:
+    contain;
+
+  object-position:
+    center center;
+
+  display:
+    block;
+
+  image-rendering:
+    auto;
+
+  backface-visibility:
+    hidden;
+
+  -webkit-backface-visibility:
+    hidden;
+
+}
+
+
+/* =========================================================
+   CINEMATIC GRADIENT
+========================================================= */
+
+.hero-overlay {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    -1;
+
+  pointer-events:
+    none;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+
+      rgba(255,255,255,.14) 0%,
+
+      rgba(255,255,255,.05) 22%,
+
+      rgba(0,0,0,.04) 42%,
+
+      rgba(0,0,0,.27) 68%,
+
+      rgba(0,0,0,.72) 100%
+    );
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  width:
+    min(100%,1100px);
+
+  padding:
+    30px 20px;
+
+  text-align:
+    center;
+
+  animation:
+    heroReveal 1.3s var(--ease) both;
+
+}
+
+
+.hero h1 {
+
+  margin:
+    0;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    clamp(68px,11vw,150px);
+
+  font-weight:
+    400;
+
+  line-height:
+    .84;
+
+  letter-spacing:
+    -.035em;
+
+  text-shadow:
+    0 4px 24px rgba(0,0,0,.18);
+
+}
+
+
+.hero h1 span,
+footer span {
+
+  font-style:
+    italic;
+
+}
+
+
+.date {
+
+  margin:
+    30px 0 0;
+
+  font-size:
+    12px;
+
+  letter-spacing:
+    clamp(3px,.7vw,6px);
+
+  text-shadow:
+    0 2px 12px rgba(0,0,0,.18);
+
+}
+
+
+.scroll {
+
+  display:
+    inline-flex;
+
+  margin-top:
+    clamp(60px,10vh,100px);
+
+  padding-bottom:
+    9px;
+
+  color:
+    var(--white);
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    3px;
+
+  text-decoration:
+    none;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.7);
+
+  transition:
+
+    opacity .35s ease,
+
+    transform .35s var(--ease);
+
+}
+
+
+.scroll:hover {
+
+  opacity:
+    .7;
+
+  transform:
+    translateY(4px);
+
+}
+
+
+/* =========================================================
+   HERO ENTRANCE
+========================================================= */
+
+@keyframes heroReveal {
+
+  from {
+
+    opacity:
+      0;
+
+    transform:
+      translateY(24px)
+      scale(.985);
+
+  }
+
+  to {
+
+    opacity:
+      1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE PHOTO
+========================================================= */
+
+.photo-band {
+
+  width:
+    100%;
+
+  overflow:
+    hidden;
+
+  background:
+    #222;
+
+}
+
+
+.landscape-photo {
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    auto;
+
+  min-height:
+    500px;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center center;
+
+  transition:
+    transform 1.2s var(--ease);
+
+}
+
+
+.photo-band:hover
+.landscape-photo {
+
+  transform:
+    scale(1.02);
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-section {
+
+  width:
+    100%;
+
+  max-width:
+    none;
+
+  text-align:
+    center;
+
+  background:
+    var(--paper-2);
+
+}
+
+
+.countdown {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  width:
+    min(850px,100%);
+
+  margin:
+    48px auto 0;
+
+}
+
+
+.countdown div {
+
+  position:
+    relative;
+
+  padding:
+    0 15px;
+
+  text-align:
+    center;
+
+}
+
+
+.countdown div + div::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    20%;
+
+  left:
+    0;
+
+  width:
+    1px;
+
+  height:
+    60%;
+
+  background:
+    var(--line);
+
+}
+
+
+.countdown strong {
+
+  display:
+    block;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    clamp(44px,6vw,70px);
+
+  font-weight:
+    400;
+
+  line-height:
+    1;
+
+}
+
+
+.countdown span {
+
+  display:
+    block;
+
+  margin-top:
+    13px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    8px;
+
+  letter-spacing:
+    3px;
+
+}
+
+
+/* =========================================================
+   WEDDING LOCATION CARDS
+========================================================= */
+
+.cards {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  margin-top:
+    65px;
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+
+.cards article {
+
+  padding:
+    46px
+    clamp(25px,5vw,55px);
+
+  border-bottom:
+    1px solid var(--line);
+
+}
+
+
+.cards article + article {
+
+  border-left:
+    1px solid var(--line);
+
+}
+
+
+.number {
+
+  display:
+    block;
+
+  color:
+    var(--muted);
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    3px;
+
+}
+
+
+.cards h3 {
+
+  margin:
+    26px 0 18px;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    clamp(34px,3.5vw,50px);
+
+  font-weight:
+    400;
+
+  line-height:
+    1;
+
+}
+
+
+.cards p {
+
+  max-width:
+    430px;
+
+  margin:
+    0;
+
+  color:
+    #5d5951;
+
+  font-size:
+    13px;
+
+  font-weight:
+    300;
+
+  line-height:
+    1.85;
+
+}
+
+
+.text-link {
+
+  display:
+    inline-block;
+
+  margin-top:
+    18px;
+
+  padding-bottom:
+    6px;
+
+  color:
+    inherit;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    3px;
+
+  text-decoration:
+    none;
+
+  border-bottom:
+    1px solid #777;
+
+  transition:
+
+    opacity .3s ease,
+
+    transform .3s var(--ease);
+
+}
+
+
+.text-link:hover {
+
+  opacity:
+    .55;
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote {
+
+  padding:
+    clamp(100px,14vw,170px)
+    25px;
+
+  text-align:
+    center;
+
+  color:
+    var(--white);
+
+  background:
+    #24231f;
+
+}
+
+
+.quote p {
+
+  max-width:
+    900px;
+
+  margin:
+    auto;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    clamp(38px,6vw,72px);
+
+  line-height:
+    1;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+  padding:
+    70px 20px;
+
+  text-align:
+    center;
+
+  background:
+    var(--paper-2);
+
+}
+
+
+footer h2 {
+
+  margin:
+    0 0 12px;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    clamp(42px,6vw,55px);
+
+  font-weight:
+    400;
+
+}
+
+
+footer p {
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    3px;
+
+}
+
+
+/* =========================================================
+   SOFT SCROLL REVEAL
+========================================================= */
+
+.reveal {
+
+  opacity:
+    0;
+
+  transform:
+    translate3d(0,42px,0)
+    scale(.985);
+
+  filter:
+    blur(2px);
+
+  transition:
+
+    opacity 1.05s var(--ease),
+
+    transform 1.05s var(--ease),
+
+    filter 1.05s ease;
+
+  will-change:
+    opacity,
+    transform,
+    filter;
+
+}
+
+
+.reveal.is-visible {
+
+  opacity:
+    1;
+
+  transform:
+    translate3d(0,0,0)
+    scale(1);
+
+  filter:
+    blur(0);
+
+}
+
+
+.reveal.slow-reveal {
+
+  transition-duration:
+    1.25s;
+
+}
+
+
+.cards article.reveal {
+
+  transition-duration:
+    .9s;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+
+    padding-top:
+      95px;
+
+    padding-bottom:
+      95px;
+
+  }
+
+
+  .cards article {
+
+    padding:
+      40px 30px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+  html {
+
+    scroll-padding-top:
+      0;
+
+  }
+
+
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
+
+  .hero {
+
+    min-height:
+      100svh;
+
+  }
+
+
+  .hero-image {
+
+    object-fit:
+      cover;
+
+    object-position:
+      center 38%;
+
+  }
+
+
+  .hero::before {
+
+    filter:
+      blur(18px);
+
+    opacity:
+      .45;
+
+  }
+
+
+  .hero-overlay {
+
+    background:
+
+      linear-gradient(
+        to bottom,
+
+        rgba(255,255,255,.12) 0%,
+
+        rgba(255,255,255,.04) 22%,
+
+        rgba(0,0,0,.08) 45%,
+
+        rgba(0,0,0,.38) 72%,
+
+        rgba(0,0,0,.72) 100%
+      );
+
+  }
+
+
+  .hero-content {
+
+    padding:
+      24px 18px;
+
+  }
+
+
+  .hero h1 {
+
+    font-size:
+      clamp(62px,18vw,88px);
+
+    letter-spacing:
+      -.045em;
+
+  }
+
+
+  .eyebrow {
+
+    margin-bottom:
+      18px;
+
+    font-size:
+      8px;
+
+    letter-spacing:
+      2.5px;
+
+  }
+
+
+  .date {
+
+    margin-top:
+      25px;
+
+    font-size:
+      10px;
+
+    letter-spacing:
+      3px;
+
+  }
+
+
+  .scroll {
+
+    margin-top:
+      70px;
+
+    font-size:
+      8px;
+
+    letter-spacing:
+      2px;
+
+  }
+
+
+  /* -----------------------------------------
+     BIBLE VERSE
+  ----------------------------------------- */
+
+  .bible-quote {
+
+    font-size:
+      clamp(28px,8vw,40px);
+
+    line-height:
+      1.12;
+
+    margin-bottom:
+      25px;
+
+  }
+
+
+  /* -----------------------------------------
+     GENERAL
+  ----------------------------------------- */
+
+  .section {
+
+    padding:
+      80px 22px;
+
+  }
+
+
+  .intro h2,
+  .details h2 {
+
+    font-size:
+      clamp(42px,13vw,62px);
+
+    line-height:
+      .95;
+
+  }
+
+
+  .body-copy {
+
+    font-size:
+      13px;
+
+    line-height:
+      1.9;
+
+  }
+
+
+  /* -----------------------------------------
+     LANDSCAPE PHOTO
+  ----------------------------------------- */
+
+  .landscape-photo {
+
+    width:
+      100%;
+
+    min-height:
+      300px;
+
+    height:
+      55vw;
+
+    object-fit:
+      cover;
+
+    object-position:
+      center center;
+
+  }
+
+
+  /* -----------------------------------------
+     COUNTDOWN
+  ----------------------------------------- */
+
+  .countdown {
+
+    margin-top:
+      38px;
+
+  }
+
+
+  .countdown div {
+
+    padding:
+      0 7px;
+
+  }
+
+
+  .countdown strong {
+
+    font-size:
+      clamp(34px,11vw,48px);
+
+  }
+
+
+  .countdown span {
+
+    margin-top:
+      10px;
+
+    font-size:
+      6.5px;
+
+    letter-spacing:
+      1.8px;
+
+  }
+
+
+  /* -----------------------------------------
+     LOCATION CARDS
+  ----------------------------------------- */
+
+  .cards {
+
+    grid-template-columns:
+      1fr;
+
+    margin-top:
+      50px;
+
+  }
+
+
+  .cards article {
+
+    padding:
+      38px 0;
+
+  }
+
+
+  .cards article + article {
+
+    border-left:
+      0;
+
+  }
+
+
+  .cards h3 {
+
+    font-size:
+      42px;
+
+    line-height:
+      1.05;
+
+  }
+
+
+  .cards p {
+
+    font-size:
+      13px;
+
+  }
+
+
+  /* -----------------------------------------
+     QUOTE
+  ----------------------------------------- */
+
+  .quote {
+
+    padding:
+      100px 24px;
+
+  }
+
+
+  .quote p {
+
+    font-size:
+      clamp(40px,12vw,58px);
+
+  }
+
+
+  /* -----------------------------------------
+     FOOTER
+  ----------------------------------------- */
+
+  footer {
+
+    padding:
+      60px 20px;
+
+  }
+
+
+  /* -----------------------------------------
+     MOBILE REVEAL
+  ----------------------------------------- */
+
+  .reveal {
+
+    transform:
+      translate3d(0,30px,0)
+      scale(.99);
+
+    transition-duration:
+      .85s;
+
+  }
+
+
+  .cards article.reveal {
+
+    transition-duration:
+      .75s;
+
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero h1 {
+
+    font-size:
+      59px;
+
+  }
+
+
+  .bible-quote {
+
+    font-size:
+      27px;
+
+  }
+
+
+  .countdown strong {
+
+    font-size:
+      31px;
+
+  }
+
+
+  .countdown span {
+
+    font-size:
+      6px;
+
+  }
+
+
+  .landscape-photo {
+
+    min-height:
+      250px;
+
+    height:
+      60vw;
+
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+
+    scroll-behavior:
+      auto;
+
+  }
+
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      .01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      .01ms !important;
+
+  }
+
+
+  .reveal {
+
+    opacity:
+      1;
+
+    transform:
+      none;
+
+    filter:
+      none;
+
+  }
+
+}
